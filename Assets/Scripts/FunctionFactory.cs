@@ -18,6 +18,6 @@ public class FunctionFactory : MonoBehaviour {
 	}
 
 	public static IFunction getFunction(){
-
+		return null;
 	}
 }
