@@ -3,12 +3,12 @@ using System.Collections;
 
 public interface IFunction {
 
-	void Draw();
+	void DrawGraph();
 
 	///<summary>判定用</summary>
-	bool Hit(Player player);
+	bool IsHit(Player player);
 
-
+	string functionName;
 
 
 }
