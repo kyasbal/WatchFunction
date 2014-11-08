@@ -20,6 +20,11 @@ public class GraphBase : MonoBehaviour {
         }
 	}
 
-    public Vector2 mouseVector2 { get; }
+    public Vector2 mouseVector2 {
+        get
+        {
+            
+        }
+    }
 
 }
