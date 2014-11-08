@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Draw {
+public class Draw : MonoBehaviour {
 
+	void Update() {
+
+	}
 
 }

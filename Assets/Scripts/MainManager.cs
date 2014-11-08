@@ -9,7 +9,6 @@ public class MainManager : MonoBehaviour {
 
 	int time;
 	int nowLevel;
-	Dictionary<int, int> a;
 
 
 	// Use this for initialization

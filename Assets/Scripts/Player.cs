@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player {
+public class Player : MonoBehaviour {
 
-	public Vector2 position;
+	public Vector2 position { get; private set; }
 
-	void Move();
+	void Draw(){
+	
+	}
+
+	void Move() {
+
+	}
 
 	
 }
