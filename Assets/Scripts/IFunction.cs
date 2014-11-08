@@ -10,6 +10,7 @@ public interface IFunction{
 
 	string functionName { get; }
 
+    int functionLevel { get; }
 
 }
 
