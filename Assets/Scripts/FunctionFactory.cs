@@ -17,7 +17,7 @@ public class FunctionFactory : MonoBehaviour {
 	
 	}
 
-	IFunction getFunction(){
+	public static IFunction getFunction(){
 
 	}
 }
