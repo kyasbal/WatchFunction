@@ -10,7 +10,7 @@
 		LOD 200
 		Blend One One
 		CGPROGRAM
-		#pragma surface surf Lambert alpha
+		#pragma surface surf Lambert
 
 		float _A;
 		float _B;

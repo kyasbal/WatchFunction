@@ -15,6 +15,16 @@ namespace AssemblyCSharp
 {
 		public class LinearFunction:IFunction
 		{
+		#region IFunction implementation
+
+		public int functionLevel {
+			get {
+				throw new NotImplementedException ();
+			}
+		}
+
+		#endregion
+
 		int A {
 			get;
 			set;
