@@ -83,14 +83,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755973b88f0132a4bbfe586ad3d1f970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scaling: {x: 5, y: 5}
+  Scaling: {x: 6, y: 6}
   Opacity: 1
   BaseColor: {x: 1, y: 1, z: 1}
   IsNegative: 0
-  A: .588208735
-  B: 2.05973268
-  C: .15261206
-  D: 2.12970114
+  A: -3
+  B: -1
+  C: -1
+  D: -4
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

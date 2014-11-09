@@ -23,7 +23,5 @@ public class FunctionPrefabContainer : MonoBehaviour
 
     public GameObject SecantGameObject;
 
-    public GameObject TanGameObject;
-
     public GameObject Discrete1GameObject;
 }
