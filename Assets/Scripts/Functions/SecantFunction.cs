@@ -62,6 +62,10 @@ namespace AssemblyCSharp
 
         private float calcFunc(float x)
         {
+			if (A * x + B == 0) 
+			{
+				return 0.0f;
+			}
             return (float)(1.0f / (Math.Sin(A * x + B)) + C);
         }
 

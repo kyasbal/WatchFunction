@@ -39,7 +39,7 @@
             }
             else
             {
-                return IsNegative ? 0.0f : 0.0f;
+                return _IsNegative ? 0.0f : 0.0f;
             }
 		}
 		float4 calcColor(float2 coordinate)
