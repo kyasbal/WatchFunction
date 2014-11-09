@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 namespace Functions.PrefabController{
-public class ParaboraFunctionController:FunctionControllerBase
+public class SecantFunctionController:FunctionControllerBase
 {
 
 	public float A;

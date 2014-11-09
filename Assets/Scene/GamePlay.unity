@@ -536,6 +536,7 @@ MonoBehaviour:
   SinGameObject: {fileID: 100000, guid: ea9205503b4e20c4bb9bf02d020d5780, type: 2}
   CosGameObject: {fileID: 100000, guid: edf9c94c5f8b9264988ca7bc011d9390, type: 2}
   LogGameObject: {fileID: 100000, guid: 5971b34e465fd8542832bbabf3dc9c13, type: 2}
+  SecantGameObject: {fileID: 100000, guid: cbbc7a1cb5d61c64aa918291ab930206, type: 2}
 --- !u!1 &2080073387
 GameObject:
   m_ObjectHideFlags: 0
