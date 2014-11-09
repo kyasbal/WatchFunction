@@ -1,6 +1,6 @@
 Shader "Custom/TanFunction" {
 	Properties {
-		_A("_A",Float)=-1.0
+		_A("_A",Float)=1.0
 		_B("_B",Float)=1.0
 		_C("_C",Float)=1.0
 		_O("_O",Range(0.0,1.0))=1.0
@@ -12,6 +12,7 @@ Shader "Custom/TanFunction" {
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		Blend One One
+		ZWrite OFF
 		CGPROGRAM
 		#pragma surface surf Lambert
 
@@ -32,7 +33,7 @@ Shader "Custom/TanFunction" {
 		
 		float calcFunction(float x)
 		{
-			return Tan(_A*x+_B)+_C;
+			return tan( _A * x + _B ) + _C;
 		}
 		float4 calcColor(float2 coordinate)
 		{
