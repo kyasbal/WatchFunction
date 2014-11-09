@@ -15,8 +15,8 @@ public class FunctionFactory : MonoBehaviour {
         new SinFunction(),
         new CosFunction(),
 		new LogFunction(),
-        new SecantFunction()
-
+        new SecantFunction(),
+        new TanFunction()
 	};
 
 	// Use this for initialization
