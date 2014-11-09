@@ -33,6 +33,10 @@ Shader "Custom/SecantFunction" {
 		
 		float calcFunction(float x)
 		{
+			if (_A * x + _B == 0) 
+			{
+				return 0.0f;
+			}
 			return 1.0/(sin(_A*x + _B))+_C;
 		}
 		float4 calcColor(float2 coordinate)
