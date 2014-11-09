@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: 62bdc1fb6502b9a48b0d5d2b072a0ee1
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - LinearGameObject: {instanceID: 0}
+  - ParaboraGameObject: {instanceID: 0}
+  - SinGameObject: {instanceID: 0}
+  - CosGameObject: {instanceID: 0}
+  - LogGameObject: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

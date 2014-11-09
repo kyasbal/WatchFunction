@@ -13,8 +13,9 @@ public class FunctionFactory : MonoBehaviour {
         new LinearFunction(),
         new ParaboraFunction(),
         new SinFunction(),
-        new CosFunction()
-    };
+        new CosFunction(),
+		new LogFunction()
+	};
 
 	// Use this for initialization
 	void Start () {

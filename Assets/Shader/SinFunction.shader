@@ -13,6 +13,7 @@
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		Blend One One
+		ZWrite Off
 		CGPROGRAM
 		#pragma surface surf Lambert
 
