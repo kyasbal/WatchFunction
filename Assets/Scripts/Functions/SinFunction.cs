@@ -114,13 +114,17 @@ namespace AssemblyCSharp
 					gameManager.BasicFormulaTarget.text += string.Format ("-");
 				}
 			}
-			if (A != 1)
+			if (A == 1)
 			{
-				gameManager.BasicFormulaTarget.text += string.Format ("sin({0}x", A);
+				gameManager.BasicFormulaTarget.text += string.Format ("sin(x");
+			}
+			else if(A==-1)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("sin(-x");
 			}
 			else
 			{
-				gameManager.BasicFormulaTarget.text += string.Format ("sin(x");
+				gameManager.BasicFormulaTarget.text += string.Format ("sin({0}x",A);
 			}
 			if (B > 0)
 			{

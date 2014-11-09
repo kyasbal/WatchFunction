@@ -114,13 +114,17 @@ namespace AssemblyCSharp
 				}
 			}
 			
-			if (A != 1)
+			if (A == 1)
 			{
-				gameManager.BasicFormulaTarget.text += string.Format ("cos({0}x", A);
+				gameManager.BasicFormulaTarget.text += string.Format ("cos(x");
+			}
+			else if(A==-1)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("cos(-x");
 			}
 			else
 			{
-				gameManager.BasicFormulaTarget.text += string.Format ("cos(x");
+				gameManager.BasicFormulaTarget.text += string.Format ("cos({0}x",A);
 			}
 			if (B > 0)
 			{
