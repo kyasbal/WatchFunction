@@ -1,6 +1,6 @@
 Shader "Custom/SecantFunction" {
 	Properties {
-		_A("_A",Float)=-1.0
+		_A("_A",Float)=1.0
 		_B("_B",Float)=1.0
 		_C("_C",Float)=1.0
 		_O("_O",Range(0.0,1.0))=1.0
@@ -12,6 +12,7 @@ Shader "Custom/SecantFunction" {
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		Blend One One
+		ZWrite Off
 		CGPROGRAM
 		#pragma surface surf Lambert
 

@@ -20,4 +20,6 @@ public class FunctionPrefabContainer : MonoBehaviour
     public GameObject CosGameObject;
 
 	public GameObject LogGameObject;
+
+    public GameObject SecantGameObject;
 }
