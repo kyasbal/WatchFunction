@@ -4,6 +4,7 @@ Shader "Custom/SecantFunction" {
 		_B("_B",Float)=1.0
 		_C("_C",Float)=1.0
 		_O("_O",Range(0.0,1.0))=1.0
+		_IsNegative("_IsNegative",Float)=1.0
 		_Scaling("_Scaling",Vector)=(1.0,1.0,0,0)
 		_MainTex("Dummy",2D)="white"{}
 	}
@@ -18,6 +19,7 @@ Shader "Custom/SecantFunction" {
 		float _B;
 		float _C;
 		float _O;
+		float _IsNegative;
 		float4 _Scaling;
 		
 		struct Input {
