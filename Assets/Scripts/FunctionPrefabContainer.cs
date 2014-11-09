@@ -18,4 +18,8 @@ public class FunctionPrefabContainer : MonoBehaviour
     public GameObject SinGameObject;
 
     public GameObject CosGameObject;
+
+	public GameObject LogGameObject;
+
+    public GameObject SecantGameObject;
 }

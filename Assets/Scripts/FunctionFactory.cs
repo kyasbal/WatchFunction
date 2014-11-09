@@ -13,8 +13,11 @@ public class FunctionFactory : MonoBehaviour {
         new LinearFunction(),
         new ParaboraFunction(),
         new SinFunction(),
-        new CosFunction()
-    };
+        new CosFunction(),
+		new LogFunction(),
+        new SecantFunction()
+
+	};
 
 	// Use this for initialization
 	void Start () {

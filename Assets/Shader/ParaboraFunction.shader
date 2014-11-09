@@ -1,4 +1,4 @@
-﻿Shader "Custom/ParanboraFunction" {
+﻿Shader "Custom/LogFunction" {
 	Properties {
 		_A("_A",Float)=-1.0
 		_B("_B",Float)=1.0
@@ -33,7 +33,7 @@
 		
 		float calcFunction(float x)
 		{
-			return _A*x*x+_B*x+_C;
+			return log(_A*x + _B)+_C;
 		}
 		float4 calcColor(float2 coordinate)
 		{
