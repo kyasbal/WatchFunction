@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GraphAreaManager BasicGraphTarget;
     public IFunction CurrentFunction;
     public GraphBase TouchSensor;
+    public CountController CountDowner;
     public float nextInMillis;
     
 
@@ -44,13 +45,15 @@ public class GameManager : MonoBehaviour
                 CurrentFunction = FunctionFactory.getFunction(0, 100);
                 CurrentFunction.Refresh();
                 nextInMillis = Time.time + CurrentFunction.waitingTimeInSecound;
+                CountDowner.IsVisible = true;
             }else if (e.AfterStatus == GameStatus.Showing)
             {
+                CountDowner.IsVisible = false;
                 CurrentFunction.BeginDraw(this);
                 nextInMillis = 2+Time.time;
                 if (CurrentFunction.IsHit(TouchSensor.mouseVector2))
                 {
-                    Debug.Log("Hit!");
+                    CurrentStatus = GameStatus.GameFinishing;
                 }
             }
         }
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
 						break;
 				case GameStatus.Waiting:
                         CurrentFunction.DrawFormula(this);
+				        CountDowner.RemainSecound = this.nextInMillis - Time.time;
 				        if (Time.time > this.nextInMillis) CurrentStatus = GameStatus.Showing;
 						break;
 				case GameStatus.Showing:

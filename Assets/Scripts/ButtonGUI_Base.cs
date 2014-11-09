@@ -24,7 +24,7 @@ public abstract class ButtonGUI_Base : MonoBehaviour {
 		for (int i = 0; i < 3; i++) {
 			if (actButton[i]) {
 				buttonPosition[i] = guiScaler.GetRect(new Rect(80, 80 + 200 * i, 480, 160));
-				if (GUI.Button(buttonPosition[i], texture[i])) {
+				if (GUI.Button(buttonPosition[i], texture[i],GUIStyle.none)) {
 					DoMove(i);
 				}
 			}
@@ -33,7 +33,7 @@ public abstract class ButtonGUI_Base : MonoBehaviour {
 		if (actShareButton) {
 			for (int i = 0; i < 3; i++) {
 				shareButtonPosition[i] = guiScaler.GetRect(new Rect(80 + 180 * i, 680, 120, 120));
-				if (GUI.Button(shareButtonPosition[i], texture[i])) {
+				if (GUI.Button(shareButtonPosition[i], texture[i+3])) {
 					switch (i) {
 						case 0://twitter
 							break;
