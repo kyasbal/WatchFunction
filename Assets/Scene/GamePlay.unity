@@ -200,9 +200,9 @@ MonoBehaviour:
   Opacity: 1
   BaseColor: {x: 1, y: 1, z: 1}
   IsNegative: 0
-  A: -2
-  B: -1
-  C: -2
+  A: -4
+  B: -3
+  C: -1
 --- !u!114 &254191460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &886673650
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +835,7 @@ MonoBehaviour:
   TouchSensor: {fileID: 1332341549}
   CountDowner: {fileID: 969056821}
   nextInMillis: 0
+  GameOverImage: {fileID: 100000, guid: 65a7e5907fb774949b31690fe76e676b, type: 2}
 --- !u!4 &1852042223
 Transform:
   m_ObjectHideFlags: 0
@@ -864,8 +865,8 @@ MonoBehaviour:
   CosGameObject: {fileID: 100000, guid: edf9c94c5f8b9264988ca7bc011d9390, type: 2}
   LogGameObject: {fileID: 100000, guid: 5971b34e465fd8542832bbabf3dc9c13, type: 2}
   SecantGameObject: {fileID: 100000, guid: cbbc7a1cb5d61c64aa918291ab930206, type: 2}
-  Discrete1GameObject: {fileID: 100000, guid: deaff40eb99a6ff4686353f91d9bdb57, type: 2}
   TanGameObject: {fileID: 100000, guid: 9192d9f09eb0dcc48adf354fd9da2008, type: 2}
+  Discrete1GameObject: {fileID: 100000, guid: deaff40eb99a6ff4686353f91d9bdb57, type: 2}
 --- !u!1001 &1912695043
 Prefab:
   m_ObjectHideFlags: 0
