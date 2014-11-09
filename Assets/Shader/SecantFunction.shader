@@ -30,7 +30,7 @@ Shader "Custom/SecantFunction" {
 		
 		float calcFunction(float x)
 		{
-			return 1f/(sin(_A*x + _B))+_C;
+			return 1.0/(sin(_A*x + _B))+_C;
 		}
 		float4 calcColor(float2 coordinate)
 		{

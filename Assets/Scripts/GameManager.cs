@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
             {
                 CurrentFunction.BeginDraw(this);
                 nextInMillis = 2+Time.time;
+                if (CurrentFunction.IsHit(TouchSensor.mouseVector2))
+                {
+                    Debug.Log("Hit!");
+                }
             }
         }
 
@@ -69,10 +73,6 @@ public class GameManager : MonoBehaviour
                         if (Time.time > this.nextInMillis) CurrentStatus = GameStatus.Dismissing;
                         CurrentFunction.DrawFormula(this);
                         CurrentFunction.DrawGraph(nextInMillis-Time.time);
-				        if (CurrentFunction.IsHit(TouchSensor.mouseVector2))
-				        {
-				            Debug.Log("Hit!");
-				        }
 						break;
 				case GameStatus.Dismissing:
 				        CurrentStatus = GameStatus.Waiting;

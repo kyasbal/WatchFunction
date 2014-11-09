@@ -34,9 +34,9 @@ namespace AssemblyCSharp
 
 		    public override void Refresh()
 		    {
-                A = Random.Range(0.5f, 5.0f);
+                A = Random.Range(-5.0f, 5.0f);
                 B = Random.Range(0.5f, 5.0f);
-		        IsNegative = false;
+		        IsNegative = true;
 		    }
 
 		    public override void DrawGraph (float time)
@@ -65,11 +65,11 @@ namespace AssemblyCSharp
 		{
 		    if (IsNegative)
 		    {
-		        return calcFunc(player.x) < player.y;
+		        return calcFunc(player.x) > player.y;
 		    }
 		    else
 		    {
-                return calcFunc(player.x) > player.y;
+                return calcFunc(player.x) < player.y;
 		    }
 		}
 
@@ -92,7 +92,7 @@ namespace AssemblyCSharp
 
 		    public override void DrawFormula(GameManager gameManager)
 		    {
-		        gameManager.BasicFormulaTarget.text = string.Format("y={0}x+{1}",A,B);
+                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<{0}x+{1}", A, B) : string.Format("y>{0}x+{1}", A, B);
 		    }
 
 		    #endregion

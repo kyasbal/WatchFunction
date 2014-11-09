@@ -68,11 +68,11 @@ namespace AssemblyCSharp
             {
                 if (IsNegative)
                 {
-                    return calcFunc(player.x) < player.y;
+                    return calcFunc(player.x) > player.y;
                 }
                 else
                 {
-                    return calcFunc(player.x) > player.y;
+                    return calcFunc(player.x) < player.y;
                 }
             }
 
@@ -95,7 +95,7 @@ namespace AssemblyCSharp
 
 		    public override void DrawFormula(GameManager gameManager)
 		    {
-		        gameManager.BasicFormulaTarget.text = string.Format("y={0}x^2+{1}x+{2}",A,B,C);
+		        gameManager.BasicFormulaTarget.text =IsNegative? string.Format("y<{0}x^2+{1}x+{2}",A,B,C):string.Format("y>{0}x^2+{1}x+{2}",A,B,C);
 		    }
 
 		    #endregion

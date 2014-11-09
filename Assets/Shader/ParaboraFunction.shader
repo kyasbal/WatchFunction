@@ -38,10 +38,10 @@
 		float4 calcColor(float2 coordinate)
 		{
 			float dist=0.0;
-			if(_IsNegative&&calcFunction(coordinate.x)<coordinate.y)
+			if(_IsNegative&&calcFunction(coordinate.x)>coordinate.y)
 			{
 				dist=1.0;
-			}else if(_IsNegative&&calcFunction(coordinate.x)>coordinate.y){
+			}else if(!_IsNegative&&calcFunction(coordinate.x)<coordinate.y){
 				dist=1.0;
 			}else{
 				dist=0.0;
