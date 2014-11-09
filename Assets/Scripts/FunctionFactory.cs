@@ -14,9 +14,7 @@ public class FunctionFactory : MonoBehaviour {
         new ParaboraFunction(),
         new SinFunction(),
         new CosFunction(),
-		new LogFunction(),
-        new SecantFunction()
-        ,new Discrete1Function(),
+        new Discrete1Function(),
         new TailerSinFunction()
 	};
 
