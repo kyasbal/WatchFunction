@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         {
             if (e.AfterStatus == GameStatus.Waiting)
             {
-                CurrentFunction=new LinearFunction(1,0.2f); //TODOランダム取得
+                CurrentFunction = FunctionFactory.getFunction(0, 100);
                 nextInMillis = Time.time + CurrentFunction.waitingTimeInSecound;
             }else if (e.AfterStatus == GameStatus.Showing)
             {

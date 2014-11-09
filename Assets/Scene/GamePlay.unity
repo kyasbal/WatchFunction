@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LinearGameObject: {fileID: 100000, guid: 11aa7b17097523741afff85819f31844, type: 2}
+  ParaboraGameObject: {fileID: 100000, guid: bac49cd97f3c59a429d054b42d4bef86, type: 2}
 --- !u!1 &2080073387
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &2080073388
 Renderer:
   m_ObjectHideFlags: 0

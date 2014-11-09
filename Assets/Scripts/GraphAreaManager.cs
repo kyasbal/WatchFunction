@@ -16,7 +16,6 @@ public class GraphAreaManager : MonoBehaviour
 
     public void ChangeGameObject(GameObject obj)
     {
-        if(lastObject!=null)GameObject.DestroyObject(lastObject);
         Instantiate(obj);
         lastObject = obj;
     }

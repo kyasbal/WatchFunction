@@ -41,4 +41,4 @@ Material:
       data:
         first:
           name: _Scaling
-        second: {r: 10, g: 10, b: 0, a: 0}
+        second: {r: 5, g: 5, b: 0, a: 0}

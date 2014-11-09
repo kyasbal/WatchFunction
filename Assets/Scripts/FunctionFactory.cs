@@ -10,8 +10,8 @@ public class FunctionFactory : MonoBehaviour {
 
     private static List<IFunction> funcs = new List<IFunction>()
     {
-        new LinearFunction(2, 1),
-        new LinearFunction(1,3)
+        new LinearFunction(),
+        new ParaboraFunction()
     };
 
 	// Use this for initialization

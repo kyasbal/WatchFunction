@@ -16,7 +16,7 @@ using Random = UnityEngine.Random;
 
 namespace AssemblyCSharp
 {
-		public class LinearFunction:IFunction
+		public class ParaboraFunction:IFunction
 		{
 
             
@@ -25,7 +25,9 @@ namespace AssemblyCSharp
 
 		private float B;
 
-		public LinearFunction ()
+		private float C;
+
+		public ParaboraFunction ()
 				{
 				}
 		#region implemented abstract members of IFunction
@@ -37,19 +39,21 @@ namespace AssemblyCSharp
 
 		    public override void BeginDraw(GameManager gameManager)
 		    {
-                A = Random.Range(0.5f, 5.0f);
-                B = Random.Range(0.5f, 5.0f);
-		        var gameObject = FunctionPrefabContainer.instance.LinearGameObject;
+		        A = Random.Range(0.5f, 5.0f);
+		        B = Random.Range(0.5f, 5.0f);
+		        C = Random.Range(0f, 0.5f);
+		        var gameObject = FunctionPrefabContainer.instance.ParaboraGameObject;
 		        gameManager.BasicGraphTarget.ChangeGameObject(gameObject);
-		        var controller=gameObject.GetComponent<LinearFunctionController>();
+		        var controller=gameObject.GetComponent<ParaboraFunctionController>();
 		        controller.A = A;
+		        controller.C = C;
 		        controller.B = B;
 		    }
 
 		    private float calcFunc(float x)
-		{
-			return A * x + B;
-		}
+		    {
+		        return A*x*x + B*x + C;
+		    }
 
 		public override bool IsHit (Vector2 player)
 		{
@@ -75,7 +79,7 @@ namespace AssemblyCSharp
 
 		    public override void DrawFormula(GameManager gameManager)
 		    {
-		        gameManager.BasicFormulaTarget.text = string.Format("y={0}x+{1}",A,B);
+		        gameManager.BasicFormulaTarget.text = string.Format("y={0}x^2+{1}x+{2}",A,B,C);
 		    }
 
 		    #endregion

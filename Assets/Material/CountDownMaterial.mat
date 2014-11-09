@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ParaboraFunction
-  m_Shader: {fileID: 4800000, guid: e40dc45535d1c1446a772136bb9b6b8e, type: 3}
+  m_Name: CountDownMaterial
+  m_Shader: {fileID: 4800000, guid: 61a2c2ca0896d7f4f8dde4bb712afe1c, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,32 +17,16 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 8f46ec7d1d7b73d41be88f5a576678a5, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
-          name: _A
-        second: 1
-      data:
-        first:
-          name: _B
+          name: _Index
         second: 0
-      data:
-        first:
-          name: _O
-        second: 1
-      data:
-        first:
-          name: _C
-        second: 1
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _Scaling
-        second: {r: 5, g: 5, b: 0, a: 0}

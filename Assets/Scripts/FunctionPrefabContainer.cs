@@ -12,4 +12,6 @@ public class FunctionPrefabContainer : MonoBehaviour
     }
 
     public GameObject LinearGameObject;
+
+    public GameObject ParaboraGameObject;
 }
