@@ -12,15 +12,12 @@ public class GraphBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
         if (Input.GetMouseButton(0)) {
-            vect.x = Input.mousePosition.x;
-            vect.y = Input.mousePosition.y;
+            vect = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         } else if (Input.touchCount > 0) {
             Touch touch;
             touch = Input.GetTouch(0);
-            vect.x = 2 * touch.position.x / renderer.bounds.size.x - 1;
-            vect.y = 2 * touch.position.y / renderer.bounds.size.y - 1;
+            vect = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 1));
         }
 	}
 
