@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a9c43f835f63341a2c4f75a73e413b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RemainTime: 3
+  RemainTime: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
