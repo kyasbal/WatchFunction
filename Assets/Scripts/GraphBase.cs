@@ -3,7 +3,9 @@ using System.Collections;
 
 public class GraphBase : MonoBehaviour {
 
-    private Vector2 vect;
+    public Vector2 vect;
+
+    public GameObject Marker;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +21,12 @@ public class GraphBase : MonoBehaviour {
             touch = Input.GetTouch(0);
             vect = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 1));
         }
+        Marker.gameObject.transform.position=new Vector3(vect.x,vect.y,0);
 	}
 
     public Vector2 mouseVector2 {
 				get {
-						return vect;	
+						return vect*5;	
 				}
 		}
 }

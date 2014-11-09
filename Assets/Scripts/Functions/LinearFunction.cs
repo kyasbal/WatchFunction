@@ -25,25 +25,35 @@ namespace AssemblyCSharp
 
 		private float B;
 
+		private bool IsNegative;
+
 		public LinearFunction ()
 				{
 				}
 		#region implemented abstract members of IFunction
 
-		public override void DrawGraph (float time)
+		    public override void Refresh()
+		    {
+                A = Random.Range(0.5f, 5.0f);
+                B = Random.Range(0.5f, 5.0f);
+		        IsNegative = false;
+		    }
+
+		    public override void DrawGraph (float time)
 		{
 
 		}
 
 		    public override void BeginDraw(GameManager gameManager)
 		    {
-                A = Random.Range(0.5f, 5.0f);
-                B = Random.Range(0.5f, 5.0f);
+
 		        var gameObject = FunctionPrefabContainer.instance.LinearGameObject;
+                var controller = gameObject.GetComponent<LinearFunctionController>();
+                controller.A = A;
+                controller.B = B;
+		        controller.IsNegative = IsNegative;
 		        gameManager.BasicGraphTarget.ChangeGameObject(gameObject);
-		        var controller=gameObject.GetComponent<LinearFunctionController>();
-		        controller.A = A;
-		        controller.B = B;
+
 		    }
 
 		    private float calcFunc(float x)
@@ -53,7 +63,14 @@ namespace AssemblyCSharp
 
 		public override bool IsHit (Vector2 player)
 		{
-			return calcFunc (player.x) == player.y;
+		    if (IsNegative)
+		    {
+		        return calcFunc(player.x) < player.y;
+		    }
+		    else
+		    {
+                return calcFunc(player.x) > player.y;
+		    }
 		}
 
 		public override string functionName {

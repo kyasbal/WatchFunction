@@ -4,6 +4,8 @@ using System.Collections;
 public abstract class IFunction:MonoBehaviour
 {
     public GameObject ContentObject;
+
+    public abstract void Refresh();
 	public abstract void DrawGraph(float time);
     public abstract void BeginDraw(GameManager gameManager);
 	public abstract bool IsHit(Vector2 player);

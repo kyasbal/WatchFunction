@@ -27,27 +27,36 @@ namespace AssemblyCSharp
 
 		private float C;
 
+		    private bool IsNegative;
+
 		public ParaboraFunction ()
 				{
 				}
 		#region implemented abstract members of IFunction
 
-		public override void DrawGraph (float time)
+		    public override void Refresh()
+		    {
+                A = Random.Range(0.5f, 5.0f);
+                B = Random.Range(0.5f, 5.0f);
+                C = Random.Range(0f, 0.5f);
+		        IsNegative = false;
+		    }
+
+		    public override void DrawGraph (float time)
 		{
 
 		}
 
 		    public override void BeginDraw(GameManager gameManager)
 		    {
-		        A = Random.Range(0.5f, 5.0f);
-		        B = Random.Range(0.5f, 5.0f);
-		        C = Random.Range(0f, 0.5f);
 		        var gameObject = FunctionPrefabContainer.instance.ParaboraGameObject;
+                var controller = gameObject.GetComponent<ParaboraFunctionController>();
+                controller.A = A;
+                controller.C = C;
+                controller.B = B;
+		        controller.IsNegative = IsNegative;
 		        gameManager.BasicGraphTarget.ChangeGameObject(gameObject);
-		        var controller=gameObject.GetComponent<ParaboraFunctionController>();
-		        controller.A = A;
-		        controller.C = C;
-		        controller.B = B;
+
 		    }
 
 		    private float calcFunc(float x)
@@ -55,10 +64,17 @@ namespace AssemblyCSharp
 		        return A*x*x + B*x + C;
 		    }
 
-		public override bool IsHit (Vector2 player)
-		{
-			return calcFunc (player.x) == player.y;
-		}
+            public override bool IsHit(Vector2 player)
+            {
+                if (IsNegative)
+                {
+                    return calcFunc(player.x) < player.y;
+                }
+                else
+                {
+                    return calcFunc(player.x) > player.y;
+                }
+            }
 
 		public override string functionName {
 			get {

@@ -1,4 +1,4 @@
-﻿Shader "Custom/CountdownShader" {
+﻿Shader "Custom/SinShader" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_Index("_Index",Float)=0.0

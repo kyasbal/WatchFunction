@@ -98,15 +98,15 @@ GUIText:
   m_GameObject: {fileID: 2478958}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: aaaa
-  m_Anchor: 0
+  m_Text: Formula Area
+  m_Anchor: 1
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: -20}
   m_LineSpacing: 1
-  m_TabSize: 4
+  m_TabSize: 10
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 45
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
@@ -465,7 +465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &2080073388
 Renderer:
   m_ObjectHideFlags: 0

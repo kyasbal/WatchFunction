@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 	public GUIText BasicFormulaTarget;
     public GraphAreaManager BasicGraphTarget;
     public IFunction CurrentFunction;
+    public GraphBase TouchSensor;
     public float nextInMillis;
     
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 		{
 				CurrentStatus = GameStatus.GameStarting;
 		    BasicGraphTarget = GameObject.Find("GraphContent").GetComponent<GraphAreaManager>();
+		    TouchSensor = GameObject.FindObjectOfType<GraphBase>();
                 StatusChanged += GameManager_StatusChanged;
 		}
 
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
             if (e.AfterStatus == GameStatus.Waiting)
             {
                 CurrentFunction = FunctionFactory.getFunction(0, 100);
+                CurrentFunction.Refresh();
                 nextInMillis = Time.time + CurrentFunction.waitingTimeInSecound;
             }else if (e.AfterStatus == GameStatus.Showing)
             {
@@ -66,6 +69,10 @@ public class GameManager : MonoBehaviour
                         if (Time.time > this.nextInMillis) CurrentStatus = GameStatus.Dismissing;
                         CurrentFunction.DrawFormula(this);
                         CurrentFunction.DrawGraph(nextInMillis-Time.time);
+				        if (CurrentFunction.IsHit(TouchSensor.mouseVector2))
+				        {
+				            Debug.Log("Hit!");
+				        }
 						break;
 				case GameStatus.Dismissing:
 				        CurrentStatus = GameStatus.Waiting;
