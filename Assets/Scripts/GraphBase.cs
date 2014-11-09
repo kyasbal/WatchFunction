@@ -7,6 +7,8 @@ public class GraphBase : MonoBehaviour {
 
     public GameObject Marker;
 
+    public bool IsLock = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,6 +16,7 @@ public class GraphBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(IsLock)return;
         if (Input.GetMouseButton(0)) {
             vect = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
         } else if (Input.touchCount > 0) {

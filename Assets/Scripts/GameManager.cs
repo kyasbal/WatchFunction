@@ -50,13 +50,15 @@ public class GameManager : MonoBehaviour
             CurrentFunction.Refresh();
             nextInMillis = Time.time + CurrentFunction.waitingTimeInSecound;
             CountDowner.IsVisible = true;
+            TouchSensor.IsLock = false;
         }
         else if (e.AfterStatus == GameStatus.Showing)
         {
+            TouchSensor.IsLock = true;
             CountDowner.IsVisible = false;
             CurrentFunction.BeginDraw(this);
             nextInMillis = 2 + Time.time;
-            if (CurrentFunction.IsHit(TouchSensor.mouseVector2))
+            if (!CurrentFunction.IsHit(TouchSensor.mouseVector2))
             {
                 CurrentStatus = GameStatus.GameFinishing;
             }
