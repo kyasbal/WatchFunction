@@ -13,9 +13,11 @@ public class ResultGUI : ButtonGUI_Base {
 	protected override void DoMove(int i) {
 		switch (i) {
 			case 1:	//タイトルへ
+                Application.LoadLevel("MainMenu");
 				break;
 
 			case 2:	//もう一度
+                Application.LoadLevel("GamePlay");
 				break;
 
 			default:
