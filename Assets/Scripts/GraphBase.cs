@@ -12,8 +12,12 @@ public class GraphBase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Touch touch;
-        if (Input.touchCount > 0) {
+        
+        if (Input.GetMouseButton(0)) {
+            vect.x = Input.mousePosition.x;
+            vect.y = Input.mousePosition.y;
+        } else if (Input.touchCount > 0) {
+            Touch touch;
             touch = Input.GetTouch(0);
             vect.x = 2 * touch.position.x / renderer.bounds.size.x - 1;
             vect.y = 2 * touch.position.y / renderer.bounds.size.y - 1;
@@ -22,7 +26,7 @@ public class GraphBase : MonoBehaviour {
 
     public Vector2 mouseVector2 {
 				get {
-						return Vector2.one;	
+						return vect;	
 				}
 		}
 }
