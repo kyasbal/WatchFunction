@@ -33,13 +33,14 @@
 		
 		float calcFunction(float x)
 		{
-			if(x>0)
-			{
+			if (x * _A + _B > 0)
+            {
 				return log(x * _A + _B) + _C;
-			}else
-			{
-				return -100.0;
-			}
+            }
+            else
+            {
+                return IsNegative ? 0.0f : 0.0f;
+            }
 		}
 		float4 calcColor(float2 coordinate)
 		{

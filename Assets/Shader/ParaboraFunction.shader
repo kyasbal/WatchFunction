@@ -33,7 +33,7 @@
 		
 		float calcFunction(float x)
 		{
-			return log(_A*x + _B)+_C;
+			return _A*x*x + _B*x +_C;
 		}
 		float4 calcColor(float2 coordinate)
 		{
