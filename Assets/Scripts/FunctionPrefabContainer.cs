@@ -16,4 +16,6 @@ public class FunctionPrefabContainer : MonoBehaviour
     public GameObject ParaboraGameObject;
 
     public GameObject SinGameObject;
+
+    public GameObject CosGameObject;
 }

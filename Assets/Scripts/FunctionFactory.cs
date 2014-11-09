@@ -12,7 +12,8 @@ public class FunctionFactory : MonoBehaviour {
     {
         new LinearFunction(),
         new ParaboraFunction(),
-        new SinFunction()
+        new SinFunction(),
+        new CosFunction()
     };
 
 	// Use this for initialization

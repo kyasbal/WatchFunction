@@ -53,7 +53,7 @@ namespace AssemblyCSharp
 
 		    public override void BeginDraw(GameManager gameManager)
 		    {
-		        var gameObject = FunctionPrefabContainer.instance.SinGameObject;
+		        var gameObject = FunctionPrefabContainer.instance.CosGameObject;
                 var controller = gameObject.GetComponent<CosFunctionController>();//Controllerをかえる
                 controller.A = A;//シェーダーに引数を渡す
                 controller.C = C;
@@ -100,7 +100,7 @@ namespace AssemblyCSharp
 
 		    public override void DrawFormula(GameManager gameManager)
 		    {
-                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<sin({0}x+{1})+{2}", A, B, C) : string.Format("y>sin({0}x+{1})+{2}", A, B, C);//TODO
+                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<cos({0}x+{1})+{2}", A, B, C) : string.Format("y>cos({0}x+{1})+{2}", A, B, C);//TODO
 		    }
 
 		    #endregion
