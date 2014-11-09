@@ -22,11 +22,6 @@ public class GuiClickChecker : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             TapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var collition2d = Physics2D.OverlapPoint(TapPoint);
-            if (collition2d)
-            {
-                var hitObject = Physics2D.Raycast(TapPoint, -Vector2.up);
-            }
         }
     }
 }
