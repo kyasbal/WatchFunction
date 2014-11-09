@@ -33,8 +33,8 @@ Shader "Custom/TanFunction" {
 		
 		float calcFunction(float x)
 		{
-			if(isnan(x)) return -10;
-			else return tan( _A * x + _B ) + _C;
+			if(isnan(x)) return -10.0;
+			else return tan(_A*x+_B) + _C;
 		}
 		float4 calcColor(float2 coordinate)
 		{

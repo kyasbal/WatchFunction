@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0074351a4ad50b8459df0a8e152d2897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scaling: {x: 5, y: 5}
+  Scaling: {x: 6, y: 6}
   Opacity: 1
   BaseColor: {x: 1, y: 1, z: 1}
   IsNegative: 0

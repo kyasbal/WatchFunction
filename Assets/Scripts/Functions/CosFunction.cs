@@ -66,7 +66,7 @@ namespace AssemblyCSharp
 
 		    private float calcFunc(float x)
 		    {
-		        return (float) (D*Math.Sin(x*A + B) + C);//TODO
+		        return (float) (D*Math.Cos(x*A + B) + C);//TODO
 		    }
 
             public override bool IsHit(Vector2 player)
