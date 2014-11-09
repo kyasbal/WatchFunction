@@ -1,11 +1,10 @@
-Shader "Custom/CosFunction" {
+﻿Shader "Custom/LogFunction" {
 	Properties {
-		_A("_A",Float)=-1.0
+		_A("_A",Float)=1.0
 		_B("_B",Float)=1.0
 		_C("_C",Float)=1.0
-		_D("_D",Float)=1.0
-		_IsNegative("_IsNegative",Float)=1.0
 		_O("_O",Range(0.0,1.0))=1.0
+		_IsNegative("_IsNegative",Float)=1.0
 		_Scaling("_Scaling",Vector)=(1.0,1.0,0,0)
 		_MainTex("Dummy",2D)="white"{}
 	}
@@ -20,9 +19,8 @@ Shader "Custom/CosFunction" {
 		float _A;
 		float _B;
 		float _C;
-		float _D;
-		float _IsNegative;
 		float _O;
+		float _IsNegative;
 		float4 _Scaling;
 		
 		struct Input {
@@ -35,7 +33,13 @@ Shader "Custom/CosFunction" {
 		
 		float calcFunction(float x)
 		{
-			return _D*cos(_A*x+_B)+_C;
+			if(x>0)
+			{
+				return log(x * _A + _B) + _C;
+			}else
+			{
+				return -100.0;
+			}
 		}
 		float4 calcColor(float2 coordinate)
 		{
