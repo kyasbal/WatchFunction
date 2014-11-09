@@ -34,7 +34,7 @@ namespace AssemblyCSharp
 
 		    public override void Refresh()
 		    {
-                A = Random.Range(-3, 3);
+                A = Random.Range(1, 3)*(Random.Range (0,1)*2-1);
 				B = Random.Range(0, 5)*(A > 0 ? -1 : 1);
 				IsNegative = Random.Range (0, (A > 0 ? 3 : 1)) != 0 ? true : false;
 		    }
@@ -92,7 +92,31 @@ namespace AssemblyCSharp
 
 		    public override void DrawFormula(GameManager gameManager)
 		    {
-                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<{0}x+{1}", A, B) : string.Format("y>{0}x+{1}", A, B);
+
+			gameManager.BasicFormulaTarget.text = string.Format("y");
+			gameManager.BasicFormulaTarget.text += IsNegative ? string.Format ("<") : string.Format (">");
+			if (A != 1) 
+			{
+				if(A != -1)
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("{0}", A);
+				}
+				else
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("-");
+				}
+			}
+			gameManager.BasicFormulaTarget.text += string.Format ("x");
+			if (B > 0)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("+{0}", B);
+			} 
+			else if (B < 0) 
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("{0}", B);
+			} 
+
+                //gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<{0}x+{1}", A, B) : string.Format("y>{0}x+{1}", A, B);
 		    }
 
 		    #endregion

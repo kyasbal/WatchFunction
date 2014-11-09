@@ -95,8 +95,53 @@ namespace AssemblyCSharp
 		    }
 
 		    public override void DrawFormula(GameManager gameManager)
-		    {
-		        gameManager.BasicFormulaTarget.text =IsNegative? string.Format("y<{0}x^2+{1}x+{2}",A,B,C):string.Format("y>{0}x^2+{1}x+{2}",A,B,C);
+		{
+			gameManager.BasicFormulaTarget.text = string.Format("y");
+			gameManager.BasicFormulaTarget.text += IsNegative ? string.Format ("<") : string.Format (">");
+			if (A != 1) 
+			{
+				if(A != -1)
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("{0}", A);
+				}
+				else
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("-");
+				}
+			}
+			gameManager.BasicFormulaTarget.text += string.Format ("x^2");
+			if (B > 0) 
+			{
+				if (B != 1)
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("+{0}x", B);
+				}
+				else
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("+x");
+				}
+			}
+			else if (B < 0) 
+			{
+				if (B != -1)
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("{0}x", B);
+				}
+				else
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("-x");
+				}
+			} 
+			
+			if (C > 0) 
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("+{0}", C);
+			} 
+			else if (C < 0) 
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("{0}", C);
+			} 
+		        //gameManager.BasicFormulaTarget.text =IsNegative? string.Format("y<{0}x^2+{1}x+{2}",A,B,C):string.Format("y>{0}x^2+{1}x+{2}",A,B,C);
 		    }
 
 		    #endregion

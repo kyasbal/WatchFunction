@@ -38,13 +38,13 @@ namespace AssemblyCSharp
 		#region implemented abstract members of IFunction
 
 		    public override void Refresh()
-		    {
-                A = Random.Range(0.5f, 5.0f);
-                B = Random.Range(0.5f, 5.0f);
-                C = Random.Range(0f, 0.5f);
-		        D = Random.Range(1.0f, 3.0f);
-		        IsNegative = false;
-		    }
+		{
+			A = Random.Range(1, 9)*(Random.Range (0,1)*2-1);
+			B = Random.Range(1, 4)*(Random.Range (0,1)*2-1);
+			C = Random.Range(1, 4)*(Random.Range (0,1)*2-1);
+			D = Random.Range(1, 9)*(Random.Range (0,1)*2-1);
+			IsNegative = Random.Range (0,1) != 0 ? true : false;
+		   }
 
 		    public override void DrawGraph (float time)
 		{
@@ -99,8 +99,51 @@ namespace AssemblyCSharp
 		    }
 
 		    public override void DrawFormula(GameManager gameManager)
-		    {
-                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<cos({0}x+{1})+{2}", A, B, C) : string.Format("y>cos({0}x+{1})+{2}", A, B, C);//TODO
+		{
+			gameManager.BasicFormulaTarget.text = string.Format("y");
+			gameManager.BasicFormulaTarget.text += IsNegative ? string.Format ("<") : string.Format (">");
+			if (D != 1) 
+			{
+				if(D != -1)
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("{0}", D);
+				}
+				else
+				{
+					gameManager.BasicFormulaTarget.text += string.Format ("-");
+				}
+			}
+			
+			if (A != 1)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("cos({0}x", A);
+			}
+			else
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("cos(x");
+			}
+			if (B > 0)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("+{0})", B);
+			}
+			else if (B < 0)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("{0})", B);
+			}
+			else
+			{
+				gameManager.BasicFormulaTarget.text += string.Format (")");
+			}
+			
+			if (C > 0)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("+{0}", C);
+			} 
+			else if (C < 0)
+			{
+				gameManager.BasicFormulaTarget.text += string.Format ("{0}", C);
+			} 
+                //gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<cos({0}x+{1})+{2}", A, B, C) : string.Format("y>cos({0}x+{1})+{2}", A, B, C);//TODO
 		    }
 
 		    #endregion
