@@ -95,14 +95,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa5b9782c9cd02c4c9234a65a5ed1deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scaling: {x: 5, y: 5}
+  Scaling: {x: 6, y: 6}
   Opacity: 1
   BaseColor: {x: 1, y: 1, z: 1}
   IsNegative: 0
-  A: 0
-  B: 0
-  C: 0
-  D: 0
+  A: -5
+  B: -3
+  C: -2
+  D: -4
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
