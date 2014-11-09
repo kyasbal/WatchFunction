@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
                 {
                     Instantiate(GameOverImage);
                 }
+                Application.LoadLevel("GameResult");
+                CurrentStatus = GameStatus.Waiting;
                 break;
             case GameStatus.Waiting:
                 CurrentFunction.DrawFormula(this);
