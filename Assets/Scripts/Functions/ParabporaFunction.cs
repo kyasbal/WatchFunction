@@ -36,10 +36,11 @@ namespace AssemblyCSharp
 
 		    public override void Refresh()
 		    {
-                A = Random.Range(0.5f, 5.0f);
-                B = Random.Range(0.5f, 5.0f);
-                C = Random.Range(0f, 0.5f);
-		        IsNegative = false;
+                A = Random.Range(-9, 9);
+				A = A != 0 ? A : 1;
+                B = Random.Range(0, 9)*(A > 0 ? -1 : 1);
+				C = Random.Range(0, 5)*(A > 0 ? -1 : 1);
+				IsNegative = Random.Range (0, (A > 0 ? 3 : 1)) != 0 ? true : false;
 		    }
 
 		    public override void DrawGraph (float time)
