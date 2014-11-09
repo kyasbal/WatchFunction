@@ -17,7 +17,7 @@ using Random = UnityEngine.Random;
 
 namespace AssemblyCSharp
 {
-		public class SinFunction:IFunction
+		public class CosFunction:IFunction
 		{
 
             
@@ -32,7 +32,7 @@ namespace AssemblyCSharp
 
 		    private bool IsNegative;
 
-		public SinFunction ()
+		public CosFunction ()
 				{
 				}
 		#region implemented abstract members of IFunction
@@ -54,8 +54,8 @@ namespace AssemblyCSharp
 		    public override void BeginDraw(GameManager gameManager)
 		    {
 		        var gameObject = FunctionPrefabContainer.instance.SinGameObject;
-                var controller = gameObject.GetComponent<SinFunctionController>();
-                controller.A = A;
+                var controller = gameObject.GetComponent<CosFunctionController>();//Controllerをかえる
+                controller.A = A;//シェーダーに引数を渡す
                 controller.C = C;
                 controller.B = B;
 		        controller.D = D;
@@ -66,7 +66,7 @@ namespace AssemblyCSharp
 
 		    private float calcFunc(float x)
 		    {
-		        return (float) (D*Math.Sin(x*A + B) + C);
+		        return (float) (D*Math.Sin(x*A + B) + C);//TODO
 		    }
 
             public override bool IsHit(Vector2 player)
@@ -100,7 +100,7 @@ namespace AssemblyCSharp
 
 		    public override void DrawFormula(GameManager gameManager)
 		    {
-                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<sin({0}x+{1})+{2}", A, B, C) : string.Format("y>sin({0}x+{1})+{2}", A, B, C);
+                gameManager.BasicFormulaTarget.text = IsNegative ? string.Format("y<sin({0}x+{1})+{2}", A, B, C) : string.Format("y>sin({0}x+{1})+{2}", A, B, C);//TODO
 		    }
 
 		    #endregion

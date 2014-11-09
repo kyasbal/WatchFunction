@@ -11,7 +11,8 @@ public class FunctionFactory : MonoBehaviour {
     private static List<IFunction> funcs = new List<IFunction>()
     {
         new LinearFunction(),
-        new ParaboraFunction()
+        new ParaboraFunction(),
+        new SinFunction()
     };
 
 	// Use this for initialization

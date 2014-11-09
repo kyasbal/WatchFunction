@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts.Functions.PrefabController
 {
-    class SinFunctionController:FunctionControllerBase
+    class CosFunctionController:FunctionControllerBase
     {
         public float A;
 
