@@ -11,10 +11,10 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: ParaboraFunction
+  m_Name: CosFunction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.100000001}
+  m_LocalPosition: {x: -.0198578835, y: .0520238876, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 62566e07e0d59f84fb908c4d2fad275b, type: 2}
+  - {fileID: 2100000, guid: 046a09b8cb724be40a628963f1f7b912, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -92,16 +92,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0074351a4ad50b8459df0a8e152d2897, type: 3}
+  m_Script: {fileID: 11500000, guid: aa5b9782c9cd02c4c9234a65a5ed1deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Scaling: {x: 5, y: 5}
   Opacity: 1
   BaseColor: {x: 1, y: 1, z: 1}
   IsNegative: 0
-  A: 4.75146723
-  B: .757676065
-  C: .412869215
+  A: 0
+  B: 0
+  C: 0
+  D: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LinearFunction
-  m_Shader: {fileID: 4800000, guid: 13faa2ce7e438914a9e5d721d28da98e, type: 3}
+  m_Name: SinFunction
+  m_Shader: {fileID: 4800000, guid: 4bbd628239f06d64ba34d76d4b263a76, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,7 +24,7 @@ Material:
       data:
         first:
           name: _A
-        second: 1
+        second: 4
       data:
         first:
           name: _B
@@ -35,7 +35,15 @@ Material:
         second: 1
       data:
         first:
+          name: _C
+        second: 1
+      data:
+        first:
           name: _IsNegative
+        second: 1
+      data:
+        first:
+          name: _D
         second: 1
     m_Colors:
       data:

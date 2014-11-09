@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LinearFunction
-  m_Shader: {fileID: 4800000, guid: 13faa2ce7e438914a9e5d721d28da98e, type: 3}
+  m_Name: CosFunction
+  m_Shader: {fileID: 4800000, guid: c1484c15784b59243be80fbb24f39001, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,19 +24,27 @@ Material:
       data:
         first:
           name: _A
-        second: 1
+        second: 2
       data:
         first:
           name: _B
-        second: 0
+        second: 1
       data:
         first:
           name: _O
         second: 1
       data:
         first:
+          name: _C
+        second: 1
+      data:
+        first:
           name: _IsNegative
         second: 1
+      data:
+        first:
+          name: _D
+        second: 10
     m_Colors:
       data:
         first:
