@@ -15,55 +15,47 @@ namespace AssemblyCSharp
 {
 		public class LinearFunction:IFunction
 		{
-		#region IFunction implementation
 
-		public int functionLevel {
-			get {
-				throw new NotImplementedException ();
-			}
-		}
+		private float A;
 
-		#endregion
+		private float B;
 
-		int A {
-			get;
-			set;
-		}
-
-		int B {
-			get;
-			set;
-		}
-
-		public LinearFunction (int a,int b)
-		{
+		public LinearFunction (float a,float b)
+				{
 			this.A = a;
 			this.B = b;
-		}
-		#region IFunction implementation
+				}
+		#region implemented abstract members of IFunction
 
-		private float func(float x)
+		public override void DrawGraph ()
+		{
+
+		}
+
+		private float calcFunc(float x)
 		{
 			return A * x + B;
 		}
 
-		public void DrawGraph ()
+		public override bool IsHit (Vector2 player)
 		{
-
+			return calcFunc (player.x) == player.y;
 		}
 
-		public bool IsHit (UnityEngine.Vector2 player)
-		{
-			return player.y == func (player.x);
-		}
-
-		public string functionName {
+		public override string functionName {
 			get {
-				throw new NotImplementedException ();
+				return "LinearFunction";
+			}
+		}
+
+		public override int functionLevel {
+			get {
+				return 1;
 			}
 		}
 
 		#endregion
+
 
 		}
 }

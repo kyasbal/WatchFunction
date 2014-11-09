@@ -7,14 +7,14 @@ public class GameManager : MonoBehaviour
 {
 		public GameStatus _CurrentStatus;
 
-		GameStatus CurrentStatus {
+		public GameStatus CurrentStatus {
 				get {
 						return this._CurrentStatus;
 				}
 				set {
 					var lastStatus=this._CurrentStatus;
 					this._CurrentStatus = value;
-			StatusChanged(this,new GameStatusChangedEventArgs(lastStatus,value));
+					StatusChanged(this,new GameStatusChangedEventArgs(lastStatus,value));
 				}
 		}
 

@@ -6,7 +6,7 @@ public class FunctionFactory : MonoBehaviour {
 	public int difficulty = 0;
 	private static int lastFunction = 999;
 
-	private static QuizFunctions[] funcs = new QuizFunctions[100];
+	private static IFunction[] funcs = new IFunction[100];
 
 	// Use this for initialization
 	void Start () {

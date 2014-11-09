@@ -1,7 +1,8 @@
-﻿Shader "Custom/LinearFunction" {
+﻿Shader "Custom/ParanboraFunction" {
 	Properties {
 		_A("_A",Float)=-1.0
 		_B("_B",Float)=1.0
+		_C("_C",Float)=1.0
 		_O("_O",Range(0.0,1.0))=1.0
 		_Scaling("_Scaling",Vector)=(1.0,1.0,0,0)
 		_MainTex("Dummy",2D)="white"{}
@@ -15,6 +16,7 @@
 
 		float _A;
 		float _B;
+		float _C;
 		float _O;
 		float4 _Scaling;
 		
@@ -25,9 +27,14 @@
 		{
 			return float2(before.x-0.5,before.y-0.5);
 		}
+		
+		float calcFunction(float x)
+		{
+			return _A*x*x+_B*x+_C;
+		}
 		float4 calcColor(float2 coordinate)
 		{
-			float dist=abs(coordinate.y-_A*coordinate.x-_B);
+			float dist=abs(calcFunction(coordinate.x)-coordinate.y);
 			float lamda=0.02;
 			float4 result=float4(0.0,1.0,1.0,1.0);
 			result.rgb*=max(0.0,-1.0/lamda*dist+1.0)*_O;

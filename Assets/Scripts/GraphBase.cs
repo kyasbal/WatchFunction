@@ -15,16 +15,14 @@ public class GraphBase : MonoBehaviour {
         Touch touch;
         if (Input.touchCount > 0) {
             touch = Input.GetTouch(0);
-            vect.x = 2 * touch.position.x / GameObject.renderer.bounds.size.x - 1;
-            vect.y = 2 * touch.position.y / GameObject.renderer.bounds.size.y - 1;
+            vect.x = 2 * touch.position.x / renderer.bounds.size.x - 1;
+            vect.y = 2 * touch.position.y / renderer.bounds.size.y - 1;
         }
 	}
 
     public Vector2 mouseVector2 {
-        get
-        {
-            
-        }
-    }
-
+				get {
+						return Vector2.one;	
+				}
+		}
 }

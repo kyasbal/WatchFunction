@@ -1,50 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface IFunction{
+public abstract class IFunction:MonoBehaviour{
 
-	void DrawGraph();
+	public abstract void DrawGraph();
+	public abstract bool IsHit(Vector2 player);
+	public abstract string functionName { get; }
+	public abstract int functionLevel { get; }
 
-	///<summary>判定用</summary>
-	bool IsHit(Vector2 player);
-
-	string functionName { get; }
-
-    int functionLevel { get; }
-
+	protected GameObject GetGraphArea()
+	{
+		return GameObject.FindGameObjectWithTag ("GraphArea");
+	}
 }
 
+public abstract class BasicFunctionByMaterial:IFunction
+{
 
-public class QuizFunctions : IFunction{
-
-	private string name;
-	private string pic;
-	private int level = 0;
-
-	public void DrawGraph (){
-		
-	}
-
-	public bool IsHit (Vector2 player){
-
-		return true;//TODO
-	}
-
-	public string functionName {
-		get {
-			return name;
-		}
-	}
-
-	public void setFunction(string n, string p, int l){
-		name = n;
-		pic = p;
-		level = l;
-	}
-
-	public int functionLevel {
-		get {
-			return level;
-		}
-	}
 }
