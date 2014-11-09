@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using Functions.PrefabController;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -15,6 +17,8 @@ namespace AssemblyCSharp
 {
 		public class LinearFunction:IFunction
 		{
+
+            
 
 		private float A;
 
@@ -27,12 +31,21 @@ namespace AssemblyCSharp
 				}
 		#region implemented abstract members of IFunction
 
-		public override void DrawGraph ()
+		public override void DrawGraph (float time)
 		{
 
 		}
 
-		private float calcFunc(float x)
+		    public override void BeginDraw(GameManager gameManager)
+		    {
+		        var gameObject = FunctionPrefabContainer.instance.LinearGameObject;
+		        gameManager.BasicGraphTarget.ChangeGameObject(gameObject);
+		        var controller=gameObject.GetComponent<LinearFunctionController>();
+		        controller.A = A;
+		        controller.B = B;
+		    }
+
+		    private float calcFunc(float x)
 		{
 			return A * x + B;
 		}
@@ -54,7 +67,17 @@ namespace AssemblyCSharp
 			}
 		}
 
-		#endregion
+		    public override float waitingTimeInSecound
+		    {
+		        get { return 3; }
+		    }
+
+		    public override void DrawFormula(GameManager gameManager)
+		    {
+		        gameManager.BasicFormulaTarget.text = string.Format("y={0}x+{1}",A,B);
+		    }
+
+		    #endregion
 
 
 		}

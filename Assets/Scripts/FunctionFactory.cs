@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using AssemblyCSharp;
+using UnityEngine;
 using System.Collections;
 
 public class FunctionFactory : MonoBehaviour {
@@ -6,7 +8,11 @@ public class FunctionFactory : MonoBehaviour {
 	public int difficulty = 0;
 	private static int lastFunction = 999;
 
-	private static IFunction[] funcs = new IFunction[100];
+    private static List<IFunction> funcs = new List<IFunction>()
+    {
+        new LinearFunction(2, 1),
+        new LinearFunction(1,3)
+    };
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +26,9 @@ public class FunctionFactory : MonoBehaviour {
 
 	public static IFunction getFunction(int minLevel, int maxLevel){
 		int rnd = 0;
+	    if (funcs.Count == 0) return null;
 		do {
-			rnd = Random.Range (0, 100);
+			rnd = Random.Range (0,funcs.Count);
 		} while(rnd == lastFunction && funcs[rnd].functionLevel < minLevel && funcs[rnd].functionLevel > maxLevel);
 		lastFunction = rnd;
 		return funcs[rnd];
